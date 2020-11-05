@@ -1,0 +1,9 @@
+{
+  "dev": {
+    "driver": "mysql",
+    "user": "root",
+    "database": "akshay_db",
+    "password": "",
+    "dialect": "mysql"
+  }
+}

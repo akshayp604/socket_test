@@ -1,0 +1,31 @@
+<div class="col-md-6">
+	<p>{{UserDetails.data.name}}</p>
+	<div class="box">
+		<ul *ngFor = 'let data of allUserList'>
+			<li style="cursor: pointer;" (click) = "gotoId(data.id, data.name)">{{data.name}}</li>
+		</ul> 
+	</div>
+	<div class="row">
+	<!-- <input type='file' (change)="onSelectFile($event)"> -->
+	Type msg   <input type="text" name="" [(ngModel)] = "receiver">
+	<button class="btn btn-primary" (click) ="sendMessage()"> Send </button>
+</div>
+</div>
+<br><br>
+Message
+<br>
+{{senderName}}
+<br>
+<div class="ex1">
+<div *ngFor = 'let chat of getChatArray'>
+
+  <p *ngIf = "UserDetails.data.id == chat.sender_id" style="text-align: right;">{{chat.message}} </p>
+  <p  *ngIf = "UserDetails.data.id == chat.sender_id" style="text-align: right;">{{chat.createdAt | date:'dd-MM-yy, hh:mm aaa'}}</p>
+  <p *ngIf = "UserDetails.data.id != chat.sender_id" style="text-align: left;">{{chat.message}}  </p>
+  <p  *ngIf = "UserDetails.data.id != chat.sender_id" style="text-align: left;">{{chat.createdAt | date:'dd-MM-yy, hh:mm aaa'}}</p>
+
+</div>
+</div>
+<br><br>
+
+
